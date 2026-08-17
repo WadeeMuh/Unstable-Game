@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://0mo1hp50280b"]
+
+[ext_resource type="Script" uid="uid://bjpxmncmn71nl" path="res://Weapons/cowboy_gun.gd" id="1_4eori"]
+[ext_resource type="Texture2D" uid="uid://crgxay5cheuv0" path="res://Weapons/cowboy-gun.png" id="2_t8qiy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eori"]
+atlas = ExtResource("2_t8qiy")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elneo"]
+atlas = ExtResource("2_t8qiy")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1i26"]
+atlas = ExtResource("2_t8qiy")
+region = Rect2(32, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22w8w"]
+atlas = ExtResource("2_t8qiy")
+region = Rect2(32, 32, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ffxw"]
+atlas = ExtResource("2_t8qiy")
+region = Rect2(32, 48, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0exid"]
+atlas = ExtResource("2_t8qiy")
+region = Rect2(32, 64, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xpuv"]
+atlas = ExtResource("2_t8qiy")
+region = Rect2(32, 80, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntk8s"]
+atlas = ExtResource("2_t8qiy")
+region = Rect2(32, 96, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bbv2"]
+atlas = ExtResource("2_t8qiy")
+region = Rect2(32, 112, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8qiy"]
+atlas = ExtResource("2_t8qiy")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1ydf"]
+atlas = ExtResource("2_t8qiy")
+region = Rect2(0, 32, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g35tn"]
+atlas = ExtResource("2_t8qiy")
+region = Rect2(0, 48, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmo4s"]
+atlas = ExtResource("2_t8qiy")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pp7bd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eori")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elneo")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_s1i26")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_22w8w")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_5ffxw")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_0exid")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_7xpuv")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_ntk8s")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_7bbv2")
+}],
+"loop": 0,
+"name": &"reload",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8qiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1ydf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g35tn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmo4s")
+}],
+"loop": 0,
+"name": &"shoot",
+"speed": 14.0
+}]
+
+[node name="cowboy-gun" type="CharacterBody2D" unique_id=732771962]
+z_index = 1
+script = ExtResource("1_4eori")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=715816281]
+position = Vector2(16, 0)
+sprite_frames = SubResource("SpriteFrames_pp7bd")
+animation = &"reload"
+autoplay = "default"
+frame = 7
+frame_progress = 1.0
+
+[node name="bullet-spawn" type="Marker2D" parent="." unique_id=1189054916]
+position = Vector2(22, -2)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
