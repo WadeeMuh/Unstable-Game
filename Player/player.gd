@@ -8,9 +8,11 @@ var death_animation_played: bool = false
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var up: Marker2D = $"aim-areas/up"
 @onready var up_right: Marker2D = $"aim-areas/up-right"
+@onready var right: Marker2D = $"aim-areas/right"
 @onready var down_right: Marker2D = $"aim-areas/down-right"
 @onready var down: Marker2D = $"aim-areas/down"
 @onready var down_left: Marker2D = $"aim-areas/down-left"
+@onready var left: Marker2D = $"aim-areas/left"
 @onready var up_left: Marker2D = $"aim-areas/up-left"
 var aim_areas: Array = []
 
@@ -23,8 +25,14 @@ func move_anim_check():
 	else:
 		return "_idle"
 
+func shoot_anim_check():
+	if Input.is_action_pressed("shoot"):
+		return "_shoot"
+	else:
+		return ""
+
 func _ready() -> void:
-	aim_areas = [up, up_right, down_right, down, down_left, up_left]
+	aim_areas = [up, up_right, right, down_right, down, down_left, left, up_left]
 
 func _physics_process(_delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
@@ -61,4 +69,4 @@ func _physics_process(_delta: float) -> void:
 			velocity = velocity.normalized() * speed
 		moving = velocity != Vector2.ZERO
 		move_and_slide()
-	animated_sprite.play(str(closest_ang) + move_anim_check())
+	animated_sprite.play(str(closest_ang) + move_anim_check() + shoot_anim_check())

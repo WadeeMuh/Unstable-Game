@@ -1,7 +1,8 @@
 extends Node2D
 
-@onready var cowboy_gun: CharacterBody2D = $"cowboy-gun"
-@onready var gun_spawn: Marker2D = $"Player/gun-spawn"
+@onready var camera: Camera2D = $Camera2D
+@onready var player: CharacterBody2D = $Player
 
 func _physics_process(_delta: float) -> void:
-	cowboy_gun.global_position = gun_spawn.global_position
+	var mouse_pos = get_global_mouse_position()
+	camera.global_position = (player.global_position + mouse_pos) / 4
