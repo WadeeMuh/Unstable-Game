@@ -1,4 +1,4 @@
-res://Player/player.tscn
-res://Player/player.gd
 res://Game.tscn
 res://game.gd
+res://Enemies/zombie.tscn
+res://Enemies/zombie.gd
