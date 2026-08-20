@@ -12,3 +12,6 @@ func _ready():
 func _physics_process(_delta):
 	velocity = Vector2(speed, 0).rotated(dir)
 	move_and_slide()
+
+func _on_hurtbox_area_entered(_area: Area2D) -> void:
+	queue_free()

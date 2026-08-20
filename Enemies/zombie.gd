@@ -2,7 +2,10 @@ extends CharacterBody2D
 const speed: int = 50
 var player: Node2D = null
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+var death_anim_played = false
+
 var zombie_num: int
+var health: int = 5
 
 func _ready() -> void:
 	zombie_num = randi_range(1, 8)
@@ -15,12 +18,20 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
-	velocity = (player.global_position - global_position).normalized() * speed
-	move_and_slide()
-	var dir_index = get_dir_index(player.global_position - global_position)
-	animated_sprite.play(str(dir_index) + "_run" + "_Z" + str(zombie_num))
-	
+	if !death_anim_played:
+		velocity = (player.global_position - global_position).normalized() * speed
+		move_and_slide()
+		var dir_index = get_dir_index(player.global_position - global_position)
+		animated_sprite.play(str(dir_index) + "_run" + "_Z" + str(zombie_num))
+		if health <= 0:
+			animated_sprite.play(str(dir_index) + "_death" + "_Z" + str(zombie_num))
+			$CollisionShape2D.queue_free()
+			death_anim_played = true
+			await animated_sprite.animation_finished
+			queue_free()
+
 	z_index = int(global_position.y)
+	
 
 func get_dir_index(dir: Vector2) -> int:
 	if dir == Vector2.ZERO:
@@ -29,3 +40,7 @@ func get_dir_index(dir: Vector2) -> int:
 	if angle_deg < 0:
 		angle_deg += 360.0
 	return int(round(angle_deg / 45.0)) % 8
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.has_method("bullet_method"):
+		health -= 1
