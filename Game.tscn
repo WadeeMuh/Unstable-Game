@@ -17,4 +17,19 @@ script = ExtResource("2_sb48q")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1422286380]
 
 [node name="zombie" parent="." unique_id=1679625222 instance=ExtResource("4_sb48q")]
-position = Vector2(54, 32)
+position = Vector2(52, -18)
+
+[node name="zombie2" parent="." unique_id=2044602887 instance=ExtResource("4_sb48q")]
+position = Vector2(73, -28)
+
+[node name="zombie3" parent="." unique_id=1922772838 instance=ExtResource("4_sb48q")]
+position = Vector2(32, -51)
+
+[node name="zombie4" parent="." unique_id=1043020743 instance=ExtResource("4_sb48q")]
+position = Vector2(15, -64)
+
+[node name="zombie5" parent="." unique_id=59023564 instance=ExtResource("4_sb48q")]
+position = Vector2(-12, -57)
+
+[node name="zombie6" parent="." unique_id=1040602797 instance=ExtResource("4_sb48q")]
+position = Vector2(64, -65)

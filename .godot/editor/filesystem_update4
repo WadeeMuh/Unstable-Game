@@ -2,3 +2,7 @@ res://Game.tscn
 res://game.gd
 res://Enemies/zombie.tscn
 res://Enemies/zombie.gd
+res://Player/player_bullet.tscn
+res://Player/player_bullet.gd
+res://Player/player.gd
+res://Player/player.tscn

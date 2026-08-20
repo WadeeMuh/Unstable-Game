@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://csvlmb4qqkjog" path="res://Player/Player spritesheets/RunAttack.png" id="5_k53q1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8h54"]
-size = Vector2(9, 17)
+size = Vector2(9, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_btcbx"]
 atlas = ExtResource("2_4ntmi")
@@ -2417,12 +2417,12 @@ platform_floor_layers = 0
 script = ExtResource("1_btcbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1033735221]
-position = Vector2(0.5, 5.5)
+position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_l8h54")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1686815519]
 sprite_frames = SubResource("SpriteFrames_4ntmi")
-animation = &"3_idle"
+animation = &"7_run_shoot"
 autoplay = "3_idle"
 
 [node name="aim-areas" type="Node2D" parent="." unique_id=45469007]
