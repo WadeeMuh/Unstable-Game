@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://c8b2wwrsle8gx"]
+
+[ext_resource type="Texture2D" uid="uid://daspqnv0f18mv" path="res://Allies/Support/Support spritesheets/Idle2.png" id="1_bv3uo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iycbv"]
+atlas = ExtResource("1_bv3uo")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atpaw"]
+atlas = ExtResource("1_bv3uo")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5u2k"]
+atlas = ExtResource("1_bv3uo")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hs1j"]
+atlas = ExtResource("1_bv3uo")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yb75"]
+atlas = ExtResource("1_bv3uo")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enoaf"]
+atlas = ExtResource("1_bv3uo")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2he20"]
+atlas = ExtResource("1_bv3uo")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36kqi"]
+atlas = ExtResource("1_bv3uo")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2v0b"]
+atlas = ExtResource("1_bv3uo")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q08rs"]
+atlas = ExtResource("1_bv3uo")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pixq5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iycbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atpaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5u2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hs1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yb75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enoaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2he20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36kqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2v0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q08rs")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="support" type="CharacterBody2D" unique_id=65492834]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2056752430]
+sprite_frames = SubResource("SpriteFrames_pixq5")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.5333418

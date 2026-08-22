@@ -1,3 +1,3 @@
 extends Node
 
-var dodging = false
+var player_health = 100

@@ -14435,13 +14435,17 @@ size = Vector2(8, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(20, 23)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf5fn"]
+radius = 6.0
+height = 14.0
+
 [node name="zombie" type="CharacterBody2D" unique_id=1679625222]
 platform_floor_layers = 0
 script = ExtResource("1_7ss6f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=855524246]
 sprite_frames = SubResource("SpriteFrames_3okbt")
-animation = &"0_death_Z1"
+animation = &"4_attack_Z4"
 frame = 9
 frame_progress = 1.0
 
@@ -14454,5 +14458,61 @@ shape = SubResource("RectangleShape2D_6qwl1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=662753207]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="hurtboxes" type="Node2D" parent="." unique_id=193748267]
+
+[node name="0_hurtbox" type="Area2D" parent="hurtboxes" unique_id=1856033870]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtboxes/0_hurtbox" unique_id=529498392]
+position = Vector2(0, -8)
+shape = SubResource("CapsuleShape2D_yf5fn")
+
+[node name="1_hurtbox" type="Area2D" parent="hurtboxes" unique_id=691523249]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtboxes/1_hurtbox" unique_id=440572020]
+position = Vector2(6, -6)
+rotation = 0.7853982
+shape = SubResource("CapsuleShape2D_yf5fn")
+
+[node name="2_hurtbox" type="Area2D" parent="hurtboxes" unique_id=1594436749]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtboxes/2_hurtbox" unique_id=460784452]
+position = Vector2(8, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_yf5fn")
+
+[node name="3_hurtbox" type="Area2D" parent="hurtboxes" unique_id=1559702314]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtboxes/3_hurtbox" unique_id=2041267910]
+position = Vector2(6.0000005, 5.9999995)
+rotation = 2.3561945
+shape = SubResource("CapsuleShape2D_yf5fn")
+
+[node name="4_hurtbox" type="Area2D" parent="hurtboxes" unique_id=1975902971]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtboxes/4_hurtbox" unique_id=473441243]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_yf5fn")
+
+[node name="5_hurtbox" type="Area2D" parent="hurtboxes" unique_id=317912935]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtboxes/5_hurtbox" unique_id=656013490]
+position = Vector2(-5.9999995, 6.0000005)
+rotation = 0.7853982
+shape = SubResource("CapsuleShape2D_yf5fn")
+
+[node name="6_hurtbox" type="Area2D" parent="hurtboxes" unique_id=1699112342]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtboxes/6_hurtbox" unique_id=1849047184]
+position = Vector2(-8, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_yf5fn")
+
+[node name="7_hurtbox" type="Area2D" parent="hurtboxes" unique_id=1682107595]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtboxes/7_hurtbox" unique_id=1037872201]
+position = Vector2(-6, -6)
+rotation = 2.3561945
+shape = SubResource("CapsuleShape2D_yf5fn")
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
