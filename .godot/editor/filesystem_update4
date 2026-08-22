@@ -4,3 +4,5 @@ res://Allies/Tank/tank.tscn
 res://Game.tscn
 res://Enemies/zombie.tscn
 res://global.gd
+res://Player/player.tscn
+res://Enemies/zombie.gd

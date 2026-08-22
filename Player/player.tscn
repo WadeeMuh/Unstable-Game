@@ -2412,6 +2412,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(7, 13)
+
 [node name="Player" type="CharacterBody2D" unique_id=903015131 groups=["player"]]
 platform_floor_layers = 0
 script = ExtResource("1_btcbx")
@@ -2424,6 +2427,13 @@ shape = SubResource("RectangleShape2D_l8h54")
 sprite_frames = SubResource("SpriteFrames_4ntmi")
 animation = &"7_run_shoot"
 autoplay = "3_idle"
+frame_progress = 0.95986766
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=227795783]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=2047061453]
+position = Vector2(0.5, 3.5)
+shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="aim-areas" type="Node2D" parent="." unique_id=45469007]
 
