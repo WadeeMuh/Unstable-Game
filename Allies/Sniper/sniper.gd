@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 var bullet_scene: PackedScene = preload("res://Allies/Sniper/sniper_bullet.tscn")
 @export var fire_interval: float = 3.5
 var fire_timer: float = fire_interval
@@ -10,6 +9,7 @@ var current_target: Node2D = null
 func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	animated_sprite.play("idle")
+	no_snipe_area.body_entered.connect(_on_no_snipe_area_body_entered)
 
 func _physics_process(delta: float) -> void:
 	fire_timer -= delta
@@ -45,3 +45,7 @@ func shoot(target: Node2D) -> void:
 func _on_animation_finished() -> void:
 	if animated_sprite.animation == "shoot":
 		animated_sprite.play("idle")
+
+func _on_no_snipe_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("zombie"):
+		global.teamwork_score -= 2

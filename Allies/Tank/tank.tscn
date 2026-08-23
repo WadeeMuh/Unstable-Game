@@ -692,6 +692,7 @@ radius = 64.0
 [node name="Tank" type="CharacterBody2D" unique_id=118175938]
 script = ExtResource("1_hrq05")
 taunt_interval = 7.5
+chainsaw_dmg = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1996276516]
 position = Vector2(0.5, 4.5)

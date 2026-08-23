@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal died(zombie: Node2D)
+
 const speed: int = 50
 var player: Node2D = null
 
@@ -51,6 +53,7 @@ func _physics_process(_delta: float) -> void:
 			else:
 				animated_sprite.play(str(dir_index) + "_run" + "_Z" + str(zombie_num))
 		if health <= 0:
+			died.emit(self)
 			animated_sprite.play(str(dir_index) + "_death" + "_Z" + str(zombie_num))
 			$CollisionShape2D.queue_free()
 			death_anim_played = true

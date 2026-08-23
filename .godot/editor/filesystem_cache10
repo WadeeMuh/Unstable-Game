@@ -1,8 +1,8 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1787491447
+::res://::1787504936
 camera_2d.gd::GDScript::7189327288900723182::1787050078::0::1::::<>Camera2D<><>0<>0<><>::
-game.gd::GDScript::185013539773685966::1787490917::0::1::::<>Node2D<><>0<>0<><>::
-Game.tscn::PackedScene::3466508280246166112::1787491320::0::1::::<><><>0<>0<><>::uid://cvve70f8brl3::::res://game.gd<>uid://gcajabx7bi1n::::res://Player/player.tscn<>uid://daotf1uupoaao::::res://camera_2d.gd<>uid://dokn1nd6w45hs::::res://UI/GeistPixel-Regular-VariableFont_ELSH.ttf<>uid://ced7trpoy7quk::::res://Enemies/zombie.tscn<>uid://c8b2wwrsle8gx::::res://Allies/Support/support.tscn<>uid://d2k2mxg6q7sra::::res://Allies/Tank/tank.tscn<>uid://difnirsr5srp1::::res://Tilesets/background.png<>uid://dll5e6kingbyf::::res://Allies/Sniper/sniper.tscn
+game.gd::GDScript::185013539773685966::1787491786::0::1::::<>Node2D<><>0<>0<><>::
+Game.tscn::PackedScene::3466508280246166112::1787492120::0::1::::<><><>0<>0<><>::uid://cvve70f8brl3::::res://game.gd<>uid://gcajabx7bi1n::::res://Player/player.tscn<>uid://daotf1uupoaao::::res://camera_2d.gd<>uid://yovytrvrr2fa::::res://UI/Micro5-Regular.ttf<>uid://ced7trpoy7quk::::res://Enemies/zombie.tscn<>uid://c8b2wwrsle8gx::::res://Allies/Support/support.tscn<>uid://d2k2mxg6q7sra::::res://Allies/Tank/tank.tscn<>uid://difnirsr5srp1::::res://Tilesets/background.png<>uid://dll5e6kingbyf::::res://Allies/Sniper/sniper.tscn
 global.gd::GDScript::4170664516689332898::1787490956::0::1::::<>Node<><>0<>0<><>::
 icon.svg::CompressedTexture2D::5548737738150916360::1787050078::1787163784::1::::<><><>0<>0<>064dfb9f5bb06e8a60922f916cb96578<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://Allies/::1787427560
@@ -65,9 +65,9 @@ TakeDamage.png::CompressedTexture2D::1458123948794116064::1786942896::1787427562
 Taunt.png::CompressedTexture2D::6260937123020960085::1786942896::1787427562::1::::<><><>0<>0<>7c414c3aa53471990b6fc6703bfcb9c3<>res://.godot/imported/Taunt.png-91d753a4645a185e3cdd556815c7a369.ctex::
 Walk.png::CompressedTexture2D::7827845072183449763::1786942896::1787427562::1::::<><><>0<>0<>07dde14ee76544214bc51ecbe37f88d1<>res://.godot/imported/Walk.png-067de5756fc1a71469fe33484b1e446c.ctex::
 ::res://Allies/Tank/::1787490557
-tank_taunt_area.gd::GDScript::3396144732073251618::1787475644::0::1::::<>Area2D<><>0<>0<><>::
 tank.gd::GDScript::488716029206921884::1787490557::0::1::::<>CharacterBody2D<><>0<>0<><>::
 tank.tscn::PackedScene::9076666613915367018::1787479618::0::1::::<><><>0<>0<><>::uid://dbj48dhkej3dr::::res://Allies/Tank/Tank spritesheets/Idle2.png<>uid://g70c1lflamki::::res://Allies/Tank/tank.gd<>uid://qmr785tnwsgm::::res://Allies/Tank/Tank spritesheets/Taunt.png<>uid://boneaiy6cowry::::res://Allies/Tank/tank_taunt_area.gd
+tank_taunt_area.gd::GDScript::3396144732073251618::1787475644::0::1::::<>Area2D<><>0<>0<><>::
 ::res://Allies/Tank/Tank spritesheets/::1787427562
 Attack1.png::CompressedTexture2D::6754954496007776228::1786943275::1787427561::1::::<><><>0<>0<>3e5c28b8fbd99dc911b7a48f49f8fa99<>res://.godot/imported/Attack1.png-5fa367a4340e06473d17573e92ad3a2f.ctex::
 Attack2.png::CompressedTexture2D::7785709576113446078::1786943276::1787427562::1::::<><><>0<>0<>8f08880d6aee9b5ff10096e072c93e8e<>res://.godot/imported/Attack2.png-0b6d3ac7a99e513d916718cac83664f2.ctex::
@@ -140,11 +140,11 @@ Z8-Attack4.png::CompressedTexture2D::4766366997979119861::1786940762::1787165216
 Z8-Die.png::CompressedTexture2D::6339137261566339074::1786940762::1787165216::1::::<><><>0<>0<>54c69231038e86399b7c1f1d76dad22c<>res://.godot/imported/Z8-Die.png-56fe05a9685edaa9026e825bb764fac2.ctex::
 Z8-Run.png::CompressedTexture2D::6545161857155074992::1786940762::1787165216::1::::<><><>0<>0<>1e221d8fbb7daef95d2480a5316c427f<>res://.godot/imported/Z8-Run.png-5b224468f8068ac0c85c0b519ce963f0.ctex::
 Z8-Walk.png::CompressedTexture2D::3295137487804666600::1786940762::1787165216::1::::<><><>0<>0<>8756a80dac15107d4f0299e9ec17eea2<>res://.godot/imported/Z8-Walk.png-a6de708ce049256714138c7549a80077.ctex::
-::res://Player/::1787480640
+::res://Player/::1787492589
 bullet.png::CompressedTexture2D::2512390986742710550::1787184423::1787184426::1::::<><><>0<>0<>92ce62df9d1457ae57d56488733b1e3f<>res://.godot/imported/bullet.png-1ae37ed0d3a2b5f834e775e10776e799.ctex::
 bullet_hurtbox.gd::GDScript::91728675182292768::1787197198::0::1::::<>Area2D<><>0<>0<><>::
-player.gd::GDScript::4422366680711466762::1787465907::0::1::::<>CharacterBody2D<><>0<>0<><>::
-player.tscn::PackedScene::425277892114089289::1787480640::0::1::::<><><>0<>0<><>::uid://b4ahy6qmt0r3w::::res://Player/player.gd<>uid://bsp02ecwucc2m::::res://Player/Player spritesheets/Idle3.png<>uid://dqd37omhyeevq::::res://Player/Player spritesheets/Run.png<>uid://csi2ljsck33u5::::res://Player/Player spritesheets/Attack1.png<>uid://csvlmb4qqkjog::::res://Player/Player spritesheets/RunAttack.png
+player.gd::GDScript::4422366680711466762::1787492331::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::425277892114089289::1787492589::0::1::::<><><>0<>0<><>::uid://b4ahy6qmt0r3w::::res://Player/player.gd<>uid://bsp02ecwucc2m::::res://Player/Player spritesheets/Idle3.png<>uid://dqd37omhyeevq::::res://Player/Player spritesheets/Run.png<>uid://csi2ljsck33u5::::res://Player/Player spritesheets/Attack1.png<>uid://csvlmb4qqkjog::::res://Player/Player spritesheets/RunAttack.png<>uid://gbvahxwhny5y::::res://Player/Player spritesheets/Die.png
 player_bullet.gd::GDScript::4045981835252637063::1787442151::0::1::::<>CharacterBody2D<><>0<>0<><>::
 player_bullet.tscn::PackedScene::7490198352248942443::1787455890::0::1::::<><><>0<>0<><>::uid://bxv5y2sgcpodr::::res://Player/player_bullet.gd<>uid://bb2ayhvtw6jsw::::res://Player/bullet.png<>uid://bko01dwmero7::::res://Player/bullet_hurtbox.gd
 ::res://Player/Player spritesheets/::1787163784
@@ -171,5 +171,5 @@ Taunt.png::CompressedTexture2D::4444869747688519516::1787163676::1787163784::1::
 Walk.png::CompressedTexture2D::6362118077283654284::1787163676::1787163784::1::::<><><>0<>0<>899d63bf27078d746960f029ef40afc3<>res://.godot/imported/Walk.png-c3a1fb35cb9f4001a3a8102cedaa79d2.ctex::
 ::res://Tilesets/::1787489891
 background.png::CompressedTexture2D::7731899217727716204::1787489890::1787489891::1::::<><><>0<>0<>8266e0bef237578d60f5cb6847f2edb9<>res://.godot/imported/background.png-4ac1ef98402da635f250ab3122f1614a.ctex::
-::res://UI/::1787491447
+::res://UI/::1787491449
 Micro5-Regular.ttf::FontFile::1714752476954316302::1787491417::1787491449::1::::<><><>0<>0<>3da08106bca225e5ff57b6c75ea7f3ce<>res://.godot/imported/Micro5-Regular.ttf-782e0c40900547e180bb4c693e9e8326.fontdata::

@@ -1,4 +1,4 @@
 extends Node
 
-var player_health: int = 100
-var teamwork_score: int = 50
+var player_health: float = 100.0
+var teamwork_score: float = 50.0
