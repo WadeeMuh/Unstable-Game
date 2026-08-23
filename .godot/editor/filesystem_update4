@@ -16,3 +16,11 @@ res://Allies/Sniper/sniper.gd
 res://Allies/Sniper/sniper_bullet.tscn
 res://Allies/Sniper/sniper_hurtbox.gd
 res://Allies/Sniper/sniper_bullet.gd
+res://Allies/Support/healing_zone.tscn
+res://Allies/Support/healing_zone.gd
+res://Allies/Support/support.gd
+res://Player/player.gd
+res://Allies/Tank/tank.gd
+res://Allies/Support/support_bullet.tscn
+res://Allies/Support/support_bullet.gd
+res://Allies/Support/support_hurtbox.gd

@@ -22,6 +22,8 @@ global="*uid://b0okh87gt70y5"
 [display]
 
 window/size/mode=2
+window/size/resizable=false
+window/size/borderless=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

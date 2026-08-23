@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c05w6wsbw4b2b"]
+
+[ext_resource type="Texture2D" uid="uid://sehyai7s5u5q" path="res://Allies/Support/support_bullet.png" id="1_gokbj"]
+[ext_resource type="Script" uid="uid://nhdnba2fv72j" path="res://Allies/Support/support_bullet.gd" id="1_rpnub"]
+[ext_resource type="Script" uid="uid://jda6gnqd1lxi" path="res://Allies/Support/support_hurtbox.gd" id="3_4mmor"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(8, 2)
+
+[node name="support_bullet" type="CharacterBody2D" unique_id=900937171]
+script = ExtResource("1_rpnub")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=649093642]
+texture = ExtResource("1_gokbj")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=2141471888]
+script = ExtResource("3_4mmor")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=300074557]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dn7g0irb32d44" path="res://Allies/Sniper/sniper_hurtbox.gd" id="3_qufpy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(10, 2)
+size = Vector2(8, 2)
 
 [node name="sniper_bullet" type="CharacterBody2D" unique_id=1170123735]
 script = ExtResource("1_t60ix")

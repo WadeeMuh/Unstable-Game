@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c8b2wwrsle8gx"]
 
 [ext_resource type="Texture2D" uid="uid://daspqnv0f18mv" path="res://Allies/Support/Support spritesheets/Idle2.png" id="1_bv3uo"]
+[ext_resource type="Script" uid="uid://8irgb6p761ra" path="res://Allies/Support/support.gd" id="1_iycbv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iycbv"]
 atlas = ExtResource("1_bv3uo")
@@ -81,9 +82,11 @@ animations = [{
 }]
 
 [node name="support" type="CharacterBody2D" unique_id=65492834]
+script = ExtResource("1_iycbv")
+fire_interval = 4.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2056752430]
 sprite_frames = SubResource("SpriteFrames_pixq5")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.5333418
+frame_progress = 0.6931885

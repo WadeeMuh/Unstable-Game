@@ -4,20 +4,68 @@
 [ext_resource type="PackedScene" uid="uid://gcajabx7bi1n" path="res://Player/player.tscn" id="1_wbfu4"]
 [ext_resource type="Script" uid="uid://daotf1uupoaao" path="res://camera_2d.gd" id="2_sb48q"]
 [ext_resource type="PackedScene" uid="uid://ced7trpoy7quk" path="res://Enemies/zombie.tscn" id="4_sb48q"]
-[ext_resource type="PackedScene" uid="uid://dll5e6kingbyf" path="res://Allies/Sniper/sniper.tscn" id="5_t88pq"]
+[ext_resource type="PackedScene" uid="uid://c8b2wwrsle8gx" path="res://Allies/Support/support.tscn" id="6_r0x5m"]
+[ext_resource type="PackedScene" uid="uid://d2k2mxg6q7sra" path="res://Allies/Tank/tank.tscn" id="7_3mrqo"]
+[ext_resource type="Texture2D" uid="uid://difnirsr5srp1" path="res://Tilesets/background.png" id="7_joorw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(64, 96)
+
+[sub_resource type="Theme" id="Theme_g4v7s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+bg_color = Color(0.09803922, 0.4117647, 0.3019608, 0.6509804)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 
 [node name="Game" type="Node2D" unique_id=1588786759]
 script = ExtResource("1_u44n3")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=418641731]
-zoom = Vector2(4, 4)
+zoom = Vector2(3.5, 3.5)
 script = ExtResource("2_sb48q")
 
-[node name="Label" type="Label" parent="Camera2D" unique_id=909084806]
-offset_left = -135.0
-offset_top = -74.0
-offset_right = -95.0
-offset_bottom = -51.0
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1035337108]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=360281145]
+position = Vector2(-160, -32)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1730357]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=937186270]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=909084806]
+layout_mode = 1
+offset_right = 56.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 25
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control" unique_id=1731766048]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -164.0
+offset_top = -53.0
+offset_right = 164.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_g4v7s")
+theme_override_styles/background = SubResource("StyleBoxFlat_yf5fn")
+show_percentage = false
 
 [node name="Player" parent="." unique_id=903015131 instance=ExtResource("1_wbfu4")]
 
@@ -39,5 +87,24 @@ position = Vector2(-12, -57)
 [node name="zombie6" parent="." unique_id=1040602797 instance=ExtResource("4_sb48q")]
 position = Vector2(64, -65)
 
-[node name="Sniper" parent="." unique_id=775346273 instance=ExtResource("5_t88pq")]
-position = Vector2(-124, -25)
+[node name="support" parent="." unique_id=65492834 instance=ExtResource("6_r0x5m")]
+position = Vector2(-136, 32)
+
+[node name="Tank" parent="." unique_id=118175938 instance=ExtResource("7_3mrqo")]
+position = Vector2(-24, 32)
+
+[node name="zombie7" parent="." unique_id=1203766866 instance=ExtResource("4_sb48q")]
+position = Vector2(216, -48)
+
+[node name="zombie8" parent="." unique_id=1124687426 instance=ExtResource("4_sb48q")]
+position = Vector2(-72, -104)
+
+[node name="zombie9" parent="." unique_id=618378663 instance=ExtResource("4_sb48q")]
+position = Vector2(16, -104)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2143079261]
+offset_left = -192.0
+offset_top = -144.0
+offset_right = 448.0
+offset_bottom = 240.0
+texture = ExtResource("7_joorw")

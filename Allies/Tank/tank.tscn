@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://d2k2mxg6q7sra"]
 
 [ext_resource type="Texture2D" uid="uid://dbj48dhkej3dr" path="res://Allies/Tank/Tank spritesheets/Idle2.png" id="1_bp8hx"]
+[ext_resource type="Script" uid="uid://g70c1lflamki" path="res://Allies/Tank/tank.gd" id="1_hrq05"]
+[ext_resource type="Texture2D" uid="uid://qmr785tnwsgm" path="res://Allies/Tank/Tank spritesheets/Taunt.png" id="3_t2q4v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2q4v"]
+size = Vector2(9, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrq05"]
 atlas = ExtResource("1_bp8hx")
@@ -322,6 +327,46 @@ region = Rect2(512, 320, 64, 64)
 atlas = ExtResource("1_bp8hx")
 region = Rect2(576, 320, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke6o4"]
+atlas = ExtResource("3_t2q4v")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqa6r"]
+atlas = ExtResource("3_t2q4v")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16rbr"]
+atlas = ExtResource("3_t2q4v")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8goqk"]
+atlas = ExtResource("3_t2q4v")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdp6g"]
+atlas = ExtResource("3_t2q4v")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n86fm"]
+atlas = ExtResource("3_t2q4v")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqbnv"]
+atlas = ExtResource("3_t2q4v")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kmtm"]
+atlas = ExtResource("3_t2q4v")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65ym3"]
+atlas = ExtResource("3_t2q4v")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyvn0"]
+atlas = ExtResource("3_t2q4v")
+region = Rect2(576, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
 "frames": [{
@@ -603,11 +648,61 @@ animations = [{
 "loop": 1,
 "name": &"7_idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke6o4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqa6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16rbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8goqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdp6g")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_n86fm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqbnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kmtm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65ym3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyvn0")
+}],
+"loop": 0,
+"name": &"taunt",
+"speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 64.0
+
 [node name="Tank" type="CharacterBody2D" unique_id=118175938]
+script = ExtResource("1_hrq05")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1996276516]
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_t2q4v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=925294969]
 sprite_frames = SubResource("SpriteFrames_g4v7s")
-animation = &"2_idle"
+animation = &"taunt"
 autoplay = "2_idle"
+frame = 9
+frame_progress = 1.0
+
+[node name="taunt_area" type="Area2D" parent="." unique_id=862741519]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="taunt_area" unique_id=2133888091]
+shape = SubResource("CircleShape2D_g4v7s")

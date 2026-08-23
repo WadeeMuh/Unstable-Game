@@ -1,4 +1,5 @@
 extends CharacterBody2D
+
 const speed: int = 50
 var player: Node2D = null
 
@@ -14,12 +15,16 @@ var death_anim_played = false
 var zombie_num: int
 var health: int = 5
 
+func take_damage(amount: int) -> void:
+	health -= amount
+
 func _ready() -> void:
 	zombie_num = randi_range(1, 8)
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
 	animated_sprite.animation_finished.connect(_on_animation_finished)
+
 func _physics_process(_delta: float) -> void:
 	if player == null:
 		velocity = Vector2.ZERO
@@ -32,7 +37,8 @@ func _physics_process(_delta: float) -> void:
 			move_and_slide()
 			if animated_sprite.frame == 4 and not attack_hit_this_swing:
 				if attack_dirs[attack_dir_index]:
-					global.player_health -= zombie_dmg
+					if player.has_method("take_damage"):
+						player.take_damage(zombie_dmg)
 				attack_hit_this_swing = true
 		else:
 			velocity = (player.global_position - global_position).normalized() * speed
@@ -69,6 +75,8 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		health -= 1
 	elif area.has_method("sniper_hurtbox_method"):
 		health -= 10
+	elif area.has_method("support_hurtbox_method"):
+		health -= 2
 		
 
 func _on_0_hurtbox_body_entered(body: Node2D) -> void:

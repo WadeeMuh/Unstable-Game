@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bvnmwkqu072xf"]
+
+[ext_resource type="Texture2D" uid="uid://nrbvng66qeg5" path="res://Allies/Support/healing_zone.png" id="1_3bd1q"]
+[ext_resource type="Script" uid="uid://cw54dhfy0c3vg" path="res://Allies/Support/healing_zone.gd" id="1_wi2i6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf5fn"]
+radius = 13.0
+height = 32.0
+
+[node name="healing_zone" type="Area2D" unique_id=2009981851]
+script = ExtResource("1_wi2i6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1945093576]
+position = Vector2(0, 5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_yf5fn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=121729537]
+texture = ExtResource("1_3bd1q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

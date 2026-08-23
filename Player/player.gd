@@ -1,10 +1,12 @@
 extends CharacterBody2D
+
 var can_move = true
 var moving = false
 var speed = 100
 var last_y_dir: String
 var last_x_dir: String
 var death_animation_played: bool = false
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var up: Marker2D = $"aim-areas/up"
 @onready var up_right: Marker2D = $"aim-areas/up-right"
@@ -22,6 +24,9 @@ var fire_timer: float = 0.0
 
 func player_method():
 	pass
+
+func take_damage(amount: int) -> void:
+	global.player_health -= amount
 
 func move_anim_check():
 	if moving:

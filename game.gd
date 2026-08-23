@@ -5,6 +5,6 @@ extends Node2D
 
 func _physics_process(_delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
-	camera.global_position = player.global_position + (mouse_pos - player.global_position) * 0.25
+	#camera.global_position = player.global_position + (mouse_pos - player.global_position) * 0.25
 	
-	$Camera2D/Label.text = str(global.player_health)
+	$CanvasLayer/Control/Label.text = str(global.player_health)
