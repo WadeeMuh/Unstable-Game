@@ -17,7 +17,7 @@ size = Vector2(68, 85)
 size = Vector2(8, 224)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
-size = Vector2(384, 4)
+size = Vector2(332, 4)
 
 [sub_resource type="Theme" id="Theme_g4v7s"]
 
@@ -79,7 +79,7 @@ position = Vector2(-129, 0)
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="borders" unique_id=1862723394]
-position = Vector2(0, 110)
+position = Vector2(26, 110)
 shape = SubResource("RectangleShape2D_57qmd")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="borders" unique_id=1796737109]
@@ -87,7 +87,7 @@ position = Vector2(196, 0)
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="borders" unique_id=1451553852]
-position = Vector2(0, -110)
+position = Vector2(28, -110)
 shape = SubResource("RectangleShape2D_57qmd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1730357]
@@ -208,3 +208,4 @@ position = Vector2(16, -104)
 
 [node name="Sniper" parent="." unique_id=775346273 instance=ExtResource("8_joorw")]
 position = Vector2(-140, -83)
+fire_interval = 3.5
