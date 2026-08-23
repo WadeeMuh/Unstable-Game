@@ -3,13 +3,21 @@
 [ext_resource type="Script" uid="uid://cvve70f8brl3" path="res://game.gd" id="1_u44n3"]
 [ext_resource type="PackedScene" uid="uid://gcajabx7bi1n" path="res://Player/player.tscn" id="1_wbfu4"]
 [ext_resource type="Script" uid="uid://daotf1uupoaao" path="res://camera_2d.gd" id="2_sb48q"]
+[ext_resource type="FontFile" uid="uid://yovytrvrr2fa" path="res://UI/Micro5-Regular.ttf" id="4_2vekm"]
 [ext_resource type="PackedScene" uid="uid://ced7trpoy7quk" path="res://Enemies/zombie.tscn" id="4_sb48q"]
 [ext_resource type="PackedScene" uid="uid://c8b2wwrsle8gx" path="res://Allies/Support/support.tscn" id="6_r0x5m"]
 [ext_resource type="PackedScene" uid="uid://d2k2mxg6q7sra" path="res://Allies/Tank/tank.tscn" id="7_3mrqo"]
 [ext_resource type="Texture2D" uid="uid://difnirsr5srp1" path="res://Tilesets/background.png" id="7_joorw"]
+[ext_resource type="PackedScene" uid="uid://dll5e6kingbyf" path="res://Allies/Sniper/sniper.tscn" id="8_joorw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(64, 96)
+size = Vector2(68, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(8, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(384, 4)
 
 [sub_resource type="Theme" id="Theme_g4v7s"]
 
@@ -21,18 +29,66 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_joorw"]
+bg_color = Color(0.039215688, 0.7019608, 0.5686275, 0.58431375)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vekm"]
+bg_color = Color(1, 0.6117647, 0.627451, 0.44705883)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yx171"]
+bg_color = Color(0.7288307, 0, 0.13480964, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
 [node name="Game" type="Node2D" unique_id=1588786759]
 script = ExtResource("1_u44n3")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=418641731]
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(3, 3)
 script = ExtResource("2_sb48q")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1035337108]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=620451746]
+z_index = -862
+offset_left = -192.0
+offset_top = -109.0
+offset_right = 192.0
+offset_bottom = 108.0
+texture = ExtResource("7_joorw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=360281145]
-position = Vector2(-160, -32)
+[node name="borders" type="StaticBody2D" parent="." unique_id=1035337108]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders" unique_id=360281145]
+position = Vector2(-159, -26.5)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders" unique_id=910061196]
+position = Vector2(-129, 0)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders" unique_id=1862723394]
+position = Vector2(0, 110)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders" unique_id=1796737109]
+position = Vector2(196, 0)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="borders" unique_id=1451553852]
+position = Vector2(0, -110)
+shape = SubResource("RectangleShape2D_57qmd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1730357]
 
@@ -44,30 +100,78 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=909084806]
+[node name="team_score_bar" type="ProgressBar" parent="CanvasLayer/Control" unique_id=1731766048]
 layout_mode = 1
-offset_right = 56.0
-offset_bottom = 35.0
-theme_override_font_sizes/font_size = 25
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control" unique_id=1731766048]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -164.0
-offset_top = -53.0
-offset_right = 164.0
-offset_bottom = -8.0
-grow_horizontal = 2
+offset_left = -349.0
+offset_top = -67.0
+offset_right = -21.0
+offset_bottom = -22.0
+grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource("Theme_g4v7s")
 theme_override_styles/background = SubResource("StyleBoxFlat_yf5fn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_joorw")
 show_percentage = false
 
+[node name="teamwork_label" type="Label" parent="CanvasLayer/Control" unique_id=287553021]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -67.0
+offset_right = -67.0
+offset_bottom = -22.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_2vekm")
+theme_override_font_sizes/font_size = 44
+text = "Teamwork Score"
+
+[node name="health_bar" type="ProgressBar" parent="CanvasLayer/Control" unique_id=203937130]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -349.0
+offset_top = -118.0
+offset_right = -21.0
+offset_bottom = -73.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_2vekm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yx171")
+show_percentage = false
+
+[node name="health_label" type="Label" parent="CanvasLayer/Control" unique_id=1148192019]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -226.0
+offset_top = -118.0
+offset_right = -142.0
+offset_bottom = -73.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_2vekm")
+theme_override_font_sizes/font_size = 44
+text = "Health"
+
 [node name="Player" parent="." unique_id=903015131 instance=ExtResource("1_wbfu4")]
+position = Vector2(-20, 0)
 
 [node name="zombie" parent="." unique_id=1679625222 instance=ExtResource("4_sb48q")]
 position = Vector2(52, -18)
@@ -88,10 +192,10 @@ position = Vector2(-12, -57)
 position = Vector2(64, -65)
 
 [node name="support" parent="." unique_id=65492834 instance=ExtResource("6_r0x5m")]
-position = Vector2(-136, 32)
+position = Vector2(-160, 64)
 
 [node name="Tank" parent="." unique_id=118175938 instance=ExtResource("7_3mrqo")]
-position = Vector2(-24, 32)
+position = Vector2(66, -2)
 
 [node name="zombie7" parent="." unique_id=1203766866 instance=ExtResource("4_sb48q")]
 position = Vector2(216, -48)
@@ -102,9 +206,5 @@ position = Vector2(-72, -104)
 [node name="zombie9" parent="." unique_id=618378663 instance=ExtResource("4_sb48q")]
 position = Vector2(16, -104)
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=2143079261]
-offset_left = -192.0
-offset_top = -144.0
-offset_right = 448.0
-offset_bottom = 240.0
-texture = ExtResource("7_joorw")
+[node name="Sniper" parent="." unique_id=775346273 instance=ExtResource("8_joorw")]
+position = Vector2(-140, -83)

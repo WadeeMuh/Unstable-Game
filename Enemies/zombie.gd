@@ -77,68 +77,53 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		health -= 10
 	elif area.has_method("support_hurtbox_method"):
 		health -= 2
-		
 
 func _on_0_hurtbox_body_entered(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[0] = true
-		
 func _on_1_hurtbox_body_entered(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[1] = true
-		
 func _on_2_hurtbox_body_entered(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[2] = true
-		
 func _on_3_hurtbox_body_entered(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[3] = true
-		
 func _on_4_hurtbox_body_entered(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[4] = true
-		
 func _on_5_hurtbox_body_entered(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[5] = true
-		
 func _on_6_hurtbox_body_entered(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[6] = true
-		
 func _on_7_hurtbox_body_entered(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[7] = true
-		
+
 func _on_0_hurtbox_body_exited(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[0] = false
-		
 func _on_1_hurtbox_body_exited(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[1] = false
-		
 func _on_2_hurtbox_body_exited(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[2] = false
-		
 func _on_3_hurtbox_body_exited(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[3] = false
-		
 func _on_4_hurtbox_body_exited(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[4] = false
-		
 func _on_5_hurtbox_body_exited(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[5] = false
-		
 func _on_6_hurtbox_body_exited(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[6] = false
-		
 func _on_7_hurtbox_body_exited(body: Node2D) -> void:
-	if body.has_method("player_method"):
+	if body == player:
 		attack_dirs[7] = false

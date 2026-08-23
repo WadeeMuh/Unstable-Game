@@ -1,3 +1,5 @@
+res://Player/Player spritesheets/
+res://UI/
 res://Tilesets/
 res://Allies/Support/
 res://Allies/Tank/Tank spritesheets/
@@ -7,4 +9,3 @@ res://Allies/Support/Support spritesheets/
 res://Allies/Sniper/Sniper spritesheets/
 res://Enemies/Zombie spritesheets/
 res://Player/
-res://Player/Player spritesheets/

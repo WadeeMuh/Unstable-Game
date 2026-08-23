@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
 var bullet_scene: PackedScene = preload("res://Allies/Sniper/sniper_bullet.tscn")
-@export var fire_interval: float = 7.5
+@export var fire_interval: float = 3.5
 var fire_timer: float = fire_interval
 var current_target: Node2D = null
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var no_snipe_area: Area2D = $no_snipe_area
 
 func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
@@ -14,7 +15,7 @@ func _physics_process(delta: float) -> void:
 	fire_timer -= delta
 	if fire_timer <= 0:
 		current_target = get_nearest_zombie()
-		if current_target != null:
+		if current_target != null and not is_in_no_snipe_area(current_target):
 			shoot(current_target)
 		fire_timer = fire_interval
 
@@ -28,6 +29,9 @@ func get_nearest_zombie() -> Node2D:
 			nearest_dist = dist
 			nearest = zombie
 	return nearest
+
+func is_in_no_snipe_area(zombie: Node2D) -> bool:
+	return zombie in no_snipe_area.get_overlapping_bodies()
 
 func shoot(target: Node2D) -> void:
 	var bullet = bullet_scene.instantiate()

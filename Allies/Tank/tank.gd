@@ -5,7 +5,7 @@ var taunt_timer: float = 5.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 var taunting: bool = false
 
-@export var chainsaw_dmg: int = 5
+@export var chainsaw_dmg: int = 1
 @export var chainsaw_range: float = 40.0
 @export var chainsaw_interval: float = 1.0
 var chainsaw_timer: float = 0.0

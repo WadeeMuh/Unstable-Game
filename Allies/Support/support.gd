@@ -1,4 +1,5 @@
 extends CharacterBody2D
+
 var heal_zone_scene: PackedScene = preload("res://Allies/Support/healing_zone.tscn")
 @export var spawn_interval: float = 10.0
 var spawn_timer: float = 0.0
@@ -7,7 +8,7 @@ var spawn_timer: float = 0.0
 
 var bullet_scene: PackedScene = preload("res://Allies/Support/support_bullet.tscn")
 @export var fire_interval: float = 3.0
-var fire_timer: float = 0.0
+var fire_timer: float = 3.0
 var current_target: Node2D = null
 
 func _physics_process(delta: float) -> void:

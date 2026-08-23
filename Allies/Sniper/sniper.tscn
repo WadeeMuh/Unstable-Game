@@ -115,10 +115,20 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mklfs"]
+size = Vector2(115, 122)
+
 [node name="Sniper" type="CharacterBody2D" unique_id=775346273]
 script = ExtResource("1_mklfs")
+fire_interval = 10.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1499488353]
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="no_snipe_area" type="Area2D" parent="." unique_id=992892424]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="no_snipe_area" unique_id=633854627]
+position = Vector2(6.5, 59)
+shape = SubResource("RectangleShape2D_mklfs")

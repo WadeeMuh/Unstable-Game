@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dbj48dhkej3dr" path="res://Allies/Tank/Tank spritesheets/Idle2.png" id="1_bp8hx"]
 [ext_resource type="Script" uid="uid://g70c1lflamki" path="res://Allies/Tank/tank.gd" id="1_hrq05"]
 [ext_resource type="Texture2D" uid="uid://qmr785tnwsgm" path="res://Allies/Tank/Tank spritesheets/Taunt.png" id="3_t2q4v"]
+[ext_resource type="Script" uid="uid://boneaiy6cowry" path="res://Allies/Tank/tank_taunt_area.gd" id="4_4jlub"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2q4v"]
 size = Vector2(9, 13)
@@ -690,6 +691,7 @@ radius = 64.0
 
 [node name="Tank" type="CharacterBody2D" unique_id=118175938]
 script = ExtResource("1_hrq05")
+taunt_interval = 7.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1996276516]
 position = Vector2(0.5, 4.5)
@@ -703,6 +705,8 @@ frame = 9
 frame_progress = 1.0
 
 [node name="taunt_area" type="Area2D" parent="." unique_id=862741519]
+z_index = -644
+script = ExtResource("4_4jlub")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="taunt_area" unique_id=2133888091]
 shape = SubResource("CircleShape2D_g4v7s")
