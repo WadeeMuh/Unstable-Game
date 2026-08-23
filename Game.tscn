@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://gcajabx7bi1n" path="res://Player/player.tscn" id="1_wbfu4"]
 [ext_resource type="Script" uid="uid://daotf1uupoaao" path="res://camera_2d.gd" id="2_sb48q"]
 [ext_resource type="PackedScene" uid="uid://ced7trpoy7quk" path="res://Enemies/zombie.tscn" id="4_sb48q"]
+[ext_resource type="PackedScene" uid="uid://dll5e6kingbyf" path="res://Allies/Sniper/sniper.tscn" id="5_t88pq"]
 
 [node name="Game" type="Node2D" unique_id=1588786759]
 script = ExtResource("1_u44n3")
@@ -11,6 +12,12 @@ script = ExtResource("1_u44n3")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=418641731]
 zoom = Vector2(4, 4)
 script = ExtResource("2_sb48q")
+
+[node name="Label" type="Label" parent="Camera2D" unique_id=909084806]
+offset_left = -135.0
+offset_top = -74.0
+offset_right = -95.0
+offset_bottom = -51.0
 
 [node name="Player" parent="." unique_id=903015131 instance=ExtResource("1_wbfu4")]
 
@@ -32,4 +39,5 @@ position = Vector2(-12, -57)
 [node name="zombie6" parent="." unique_id=1040602797 instance=ExtResource("4_sb48q")]
 position = Vector2(64, -65)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1422286380]
+[node name="Sniper" parent="." unique_id=775346273 instance=ExtResource("5_t88pq")]
+position = Vector2(-124, -25)

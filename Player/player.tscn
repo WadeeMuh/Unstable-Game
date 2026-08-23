@@ -2427,7 +2427,7 @@ shape = SubResource("RectangleShape2D_l8h54")
 sprite_frames = SubResource("SpriteFrames_4ntmi")
 animation = &"7_run_shoot"
 autoplay = "3_idle"
-frame_progress = 0.95986766
+frame_progress = 0.51510346
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=227795783]
 

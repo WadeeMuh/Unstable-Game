@@ -6,3 +6,13 @@ res://Enemies/zombie.tscn
 res://global.gd
 res://Player/player.tscn
 res://Enemies/zombie.gd
+res://game.gd
+res://Enemies/zombie_hitbox.gd
+res://Player/player_bullet.gd
+res://Player/player_bullet.tscn
+res://Allies/Tank/sniper_bullet.tscn
+res://Allies/Tank/sniper_bullet.gd
+res://Allies/Sniper/sniper.gd
+res://Allies/Sniper/sniper_bullet.tscn
+res://Allies/Sniper/sniper_hurtbox.gd
+res://Allies/Sniper/sniper_bullet.gd

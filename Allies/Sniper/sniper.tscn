@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dll5e6kingbyf"]
 
 [ext_resource type="Texture2D" uid="uid://2bv3ck0deym5" path="res://Allies/Sniper/Sniper spritesheets/Idle2.png" id="1_jy1jg"]
+[ext_resource type="Script" uid="uid://cslqo1jhxvtqw" path="res://Allies/Sniper/sniper.gd" id="1_mklfs"]
 [ext_resource type="Texture2D" uid="uid://beg8ybxwpgtmj" path="res://Allies/Sniper/Sniper spritesheets/Attack1.png" id="2_mklfs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tv6d8"]
@@ -115,6 +116,7 @@ animations = [{
 }]
 
 [node name="Sniper" type="CharacterBody2D" unique_id=775346273]
+script = ExtResource("1_mklfs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1499488353]
 sprite_frames = SubResource("SpriteFrames_g4v7s")

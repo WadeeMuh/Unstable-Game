@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bym8bmex3m3w0"]
+
+[ext_resource type="Texture2D" uid="uid://cxqry8lhlglma" path="res://Allies/Sniper/sniper_bullet.png" id="1_6l7aj"]
+[ext_resource type="Script" uid="uid://chb76jmlr3hcs" path="res://Allies/Sniper/sniper_bullet.gd" id="1_t60ix"]
+[ext_resource type="Script" uid="uid://dn7g0irb32d44" path="res://Allies/Sniper/sniper_hurtbox.gd" id="3_qufpy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(10, 2)
+
+[node name="sniper_bullet" type="CharacterBody2D" unique_id=1170123735]
+script = ExtResource("1_t60ix")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=372729370]
+texture = ExtResource("1_6l7aj")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=1347502520]
+script = ExtResource("3_qufpy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1850290982]
+shape = SubResource("RectangleShape2D_g4v7s")

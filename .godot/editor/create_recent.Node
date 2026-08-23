@@ -1,7 +1,9 @@
 CollisionShape2D
 Area2D
+Sprite2D
+CharacterBody2D
+CanvasLayer
+Label
 Node2D
 AnimatedSprite2D
-CharacterBody2D
-Sprite2D
 Marker2D

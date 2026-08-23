@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bko01dwmero7" path="res://Player/bullet_hurtbox.gd" id="3_sw42i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(4, 2)
+size = Vector2(6, 4)
 
 [node name="player-bullet" type="CharacterBody2D" unique_id=205665174]
 script = ExtResource("1_5ljcc")

@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://dpj72djdww1wc" path="res://Enemies/Zombie spritesheets/Z6-Die.png" id="15_ytfd6"]
 [ext_resource type="Texture2D" uid="uid://xdpvw41yfsil" path="res://Enemies/Zombie spritesheets/Z7-Die.png" id="16_acrgj"]
 [ext_resource type="Texture2D" uid="uid://cwkywuhawmqra" path="res://Enemies/Zombie spritesheets/Z8-Die.png" id="17_2dkkq"]
+[ext_resource type="Script" uid="uid://dvqmv536jdmnb" path="res://Enemies/zombie_hitbox.gd" id="26_osto8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dibu"]
 atlas = ExtResource("2_m3b2e")
@@ -14439,21 +14440,20 @@ size = Vector2(20, 23)
 radius = 6.0
 height = 14.0
 
-[node name="zombie" type="CharacterBody2D" unique_id=1679625222]
+[node name="zombie" type="CharacterBody2D" unique_id=1679625222 groups=["zombie"]]
 platform_floor_layers = 0
 script = ExtResource("1_7ss6f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=855524246]
 sprite_frames = SubResource("SpriteFrames_3okbt")
-animation = &"4_attack_Z4"
-frame = 9
-frame_progress = 1.0
+animation = &"3_attack_Z5"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=182367367]
 position = Vector2(1, 5)
 shape = SubResource("RectangleShape2D_6qwl1")
 
 [node name="hitbox" type="Area2D" parent="." unique_id=1853044032]
+script = ExtResource("26_osto8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=662753207]
 position = Vector2(0, 0.5)
