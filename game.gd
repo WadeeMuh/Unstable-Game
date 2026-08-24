@@ -102,3 +102,6 @@ func spawn_zombie() -> void:
 
 func _on_restart_btn_pressed() -> void:
 	get_tree().reload_current_scene()
+
+func _on_audio_stream_player_2d_finished() -> void:
+	$AudioStreamPlayer2D.play()

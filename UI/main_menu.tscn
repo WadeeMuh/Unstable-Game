@@ -1,6 +1,40 @@
 [gd_scene format=3 uid="uid://dhvfkkad0upio"]
 
+[ext_resource type="Script" uid="uid://v5mxty45c7kl" path="res://UI/main_menu.gd" id="1_d8nwk"]
 [ext_resource type="Texture2D" uid="uid://pi3nr4bvwp0n" path="res://UI/menu_background.png" id="1_p8ccj"]
+[ext_resource type="FontFile" uid="uid://yovytrvrr2fa" path="res://UI/Micro5-Regular.ttf" id="2_tk8dj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(4.9093364e-06, 0.7012936, 0.56909484, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tk8dj"]
+bg_color = Color(0, 0.40643588, 0.3192167, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8nwk"]
+bg_color = Color(0.75604427, 0.32756168, 0.033199053, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cwpn"]
+bg_color = Color(0.4420721, 0.14545289, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
 
 [node name="main_menu" type="Control" unique_id=280044997]
 layout_mode = 3
@@ -9,6 +43,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_d8nwk")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1433433945]
 layout_mode = 0
@@ -18,3 +53,138 @@ offset_right = 378.39877
 offset_bottom = 211.39723
 scale = Vector2(2.9200003, 2.9200003)
 texture = ExtResource("1_p8ccj")
+
+[node name="Label" type="Label" parent="." unique_id=337767835]
+visible = false
+layout_mode = 0
+offset_left = 194.0
+offset_top = 16.0
+offset_right = 374.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0.5883929, 0.5883928, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_tk8dj")
+theme_override_font_sizes/font_size = 46
+text = "HOW TO PLAY:"
+
+[node name="Label2" type="Label" parent="Label" unique_id=827173610]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 56.0
+offset_right = 192.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0, 0.5882353, 0.5882353, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_tk8dj")
+theme_override_font_sizes/font_size = 30
+text = "Look out for both
+your health bar and
+your teamwork bar.
+If your teamwork
+score reaches 0,
+your team will leave
+you to fend for
+yourself."
+
+[node name="Label3" type="Label" parent="." unique_id=485471119]
+visible = false
+layout_mode = 0
+offset_left = 10.0
+offset_top = 368.0
+offset_right = 311.0
+offset_bottom = 465.0
+theme_override_colors/font_color = Color(0.7779511, 0.49382228, 5.7756904e-07, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_tk8dj")
+theme_override_font_sizes/font_size = 46
+text = "HOW YOUR TEAMWORK
+BAR DEPLETES:"
+
+[node name="Label2" type="Label" parent="Label3" unique_id=1997416913]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 110.0
+offset_right = 289.0
+offset_bottom = 214.0
+theme_override_colors/font_color = Color(0.7764706, 0.49411765, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_tk8dj")
+theme_override_font_sizes/font_size = 30
+text = "- Letting enemies attack the sniper tower
+- Staying away from the tank for too long
+- Not picking up the support's heal drops"
+
+[node name="Label4" type="Label" parent="." unique_id=167235862]
+visible = false
+layout_mode = 0
+offset_left = 450.0
+offset_top = 368.0
+offset_right = 751.0
+offset_bottom = 465.0
+theme_override_colors/font_color = Color(0.60163295, 0.00094625057, 0.7170411, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_tk8dj")
+theme_override_font_sizes/font_size = 46
+text = "HOW TO REPLENISH
+YOUR TEAMWORK BAR:"
+
+[node name="Label2" type="Label" parent="Label4" unique_id=1355960449]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 110.0
+offset_right = 289.0
+offset_bottom = 214.0
+theme_override_colors/font_color = Color(0.6, 0, 0.7176471, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_tk8dj")
+theme_override_font_sizes/font_size = 30
+text = "- Get the sniper to deal lots of damage
+- Getting kills next to the tank
+- Picking up the support's heal drops"
+
+[node name="play_btn" type="Button" parent="." unique_id=445786387]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 368.0
+offset_right = 1024.0
+offset_bottom = 444.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_tk8dj")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tk8dj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_tk8dj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_tk8dj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_tk8dj")
+text = "PLAY"
+
+[node name="how_to_play_btn" type="Button" parent="." unique_id=333464852]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 368.0
+offset_right = 685.0
+offset_bottom = 452.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_tk8dj")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_d8nwk")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_d8nwk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4cwpn")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_4cwpn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d8nwk")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_d8nwk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4cwpn")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_4cwpn")
+text = "HOW TO PLAY"
+
+[connection signal="pressed" from="play_btn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="how_to_play_btn" to="." method="_on_how_to_play_btn_pressed"]

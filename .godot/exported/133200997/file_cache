@@ -1,0 +1,11 @@
+res://Allies/Sniper/sniper.tscn::96716a83e6f0b0caa1bba11f02f4b325::1787536335::res://.godot/exported/133200997/export-8784c26fdad0d5886ff48cef121d654d-sniper.scn
+res://Allies/Sniper/sniper_bullet.tscn::dc08257cc6754ef2f155c2a35abc3e7a::1787514901::res://.godot/exported/133200997/export-86bcb60b206993040bd4640aeff0f7bb-sniper_bullet.scn
+res://Allies/Support/healing_zone.tscn::4be5df93233c099f11d1359fb1cd9ec6::1787536601::res://.godot/exported/133200997/export-074fa229f899fdcfa9ef4b313160828f-healing_zone.scn
+res://Allies/Support/support.tscn::58452490c5ef8413ee2118977741c3fb::1787536487::res://.godot/exported/133200997/export-df814e526794a437cf9a325db0b4c910-support.scn
+res://Allies/Support/support_bullet.tscn::554d2ddd90558ba1e835f5f352b90c7b::1787468059::res://.godot/exported/133200997/export-cccd0bad7f9f772326d24ba9c548d36d-support_bullet.scn
+res://Allies/Tank/tank.tscn::60371ec26699b96578afb67e250d36fa::1787536187::res://.godot/exported/133200997/export-7619460f8cdb35f150f964718cb8b9ed-tank.scn
+res://Enemies/zombie.tscn::a16633a74e239891a8bf5e1f558b4a96::1787529881::res://.godot/exported/133200997/export-50c7a443a6a0c5dd62354e71a12dbde4-zombie.scn
+res://Player/player.tscn::d29d062289906f7387c8478c08988b9e::1787535659::res://.godot/exported/133200997/export-d267b47f7e81a3258979164d56d0d9c2-player.scn
+res://Player/player_bullet.tscn::fbf503b8c3bf0cb5f46bd069e903d6a7::1787455890::res://.godot/exported/133200997/export-118d0e2b85022f8e6ca0e22dd4f758d0-player_bullet.scn
+res://UI/main_menu.tscn::61ebdeb71c34ad60a7d65b2ce79aee1b::1787534467::res://.godot/exported/133200997/export-2138ba4767b07f21f5de407b42dc4973-main_menu.scn
+res://Game.tscn::99674b4d0d118e5d7ca1a2d925f506f0::1787536753::res://.godot/exported/133200997/export-6455994a605b35b7d96f8362f3055c4a-Game.scn

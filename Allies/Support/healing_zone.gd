@@ -34,6 +34,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("player_method"):
 		global.teamwork_score += 1.5
 		global.player_health += get_current_heal_amount()
+		$AudioStreamPlayer2D.play()
 		if global.player_health > 100:
 			global.player_health = 100
 		queue_free()

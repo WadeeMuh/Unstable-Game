@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://g70c1lflamki" path="res://Allies/Tank/tank.gd" id="1_hrq05"]
 [ext_resource type="Texture2D" uid="uid://qmr785tnwsgm" path="res://Allies/Tank/Tank spritesheets/Taunt.png" id="3_t2q4v"]
 [ext_resource type="Script" uid="uid://boneaiy6cowry" path="res://Allies/Tank/tank_taunt_area.gd" id="4_4jlub"]
+[ext_resource type="AudioStream" uid="uid://bb774wtj1xjp4" path="res://UI/chainsaw.mp3" id="5_12oic"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2q4v"]
 size = Vector2(9, 13)
@@ -711,3 +712,6 @@ script = ExtResource("4_4jlub")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="taunt_area" unique_id=2133888091]
 shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1654205434]
+stream = ExtResource("5_12oic")

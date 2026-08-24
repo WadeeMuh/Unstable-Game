@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Unstable Game"
-run/main_scene="uid://bpng5c7umwe77"
+config/name="Team Player"
+run/main_scene="uid://dhvfkkad0upio"
 config/features=PackedStringArray("4.7", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0.46857172, 0.30747545, 1)
+boot_splash/image="uid://pi3nr4bvwp0n"
+config/icon="uid://drqa1kcrtdv8h"
 
 [autoload]
 

@@ -74,6 +74,7 @@ func shoot(target: Node2D) -> void:
 	bullet.rota = shoot_dir
 	bullet.dir = shoot_dir
 	get_tree().current_scene.add_child(bullet)
+	$AudioStreamPlayer2D.play()
 	animated_sprite.play("shoot")
 
 func _on_animation_finished() -> void:

@@ -1,6 +1,7 @@
-TextureRect
-Label
+AudioStreamPlayer2D
 Button
+Label
+TextureRect
 CollisionShape2D
 StaticBody2D
 Area2D
@@ -11,4 +12,3 @@ Line2D
 ShapeCast2D
 Sprite2D
 CharacterBody2D
-Control
