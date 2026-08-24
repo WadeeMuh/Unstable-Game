@@ -7,6 +7,15 @@
 radius = 13.0
 height = 32.0
 
+[sub_resource type="Gradient" id="Gradient_wi2i6"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g4v7s"]
+gradient = SubResource("Gradient_wi2i6")
+fill = 1
+fill_from = Vector2(0.49565217, 0.50869566)
+fill_to = Vector2(0.8608696, 0.13478261)
+
 [node name="healing_zone" type="Area2D" unique_id=2009981851]
 script = ExtResource("1_wi2i6")
 
@@ -17,5 +26,10 @@ shape = SubResource("CapsuleShape2D_yf5fn")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=121729537]
 texture = ExtResource("1_3bd1q")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=608993918]
+scale = Vector2(0.5, 0.5)
+color = Color(5.583167e-06, 0.9004895, 0.35455185, 1)
+texture = SubResource("GradientTexture2D_g4v7s")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

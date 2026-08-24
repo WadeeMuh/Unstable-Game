@@ -1640,7 +1640,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qodtb")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_2pcct")
 }],
 "loop": 0,
@@ -1815,7 +1815,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_swyuu")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_txxnc")
 }],
 "loop": 0,
@@ -1990,7 +1990,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6pa6w")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_2ncy5")
 }],
 "loop": 0,
@@ -2165,7 +2165,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kqg6t")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_h4n4v")
 }],
 "loop": 0,
@@ -2340,7 +2340,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hmehq")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_ple0w")
 }],
 "loop": 0,
@@ -2515,7 +2515,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xaw7y")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_x3g01")
 }],
 "loop": 0,
@@ -2690,7 +2690,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nu66q")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_se6rh")
 }],
 "loop": 0,
@@ -2865,7 +2865,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jgyf6")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_3l6dx")
 }],
 "loop": 0,
@@ -3028,7 +3028,7 @@ shape = SubResource("RectangleShape2D_l8h54")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1686815519]
 sprite_frames = SubResource("SpriteFrames_4ntmi")
-animation = &"0_death"
+animation = &"7_death"
 autoplay = "3_idle"
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=227795783]
@@ -3062,3 +3062,5 @@ position = Vector2(-8, -5)
 
 [node name="up-left" type="Marker2D" parent="aim-areas" unique_id=396458605]
 position = Vector2(-4, -10)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

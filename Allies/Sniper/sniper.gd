@@ -1,10 +1,13 @@
 extends CharacterBody2D
 var bullet_scene: PackedScene = preload("res://Allies/Sniper/sniper_bullet.tscn")
 @export var fire_interval: float = 3.5
-@export var base_spread_degrees: float = 2.0
+@export var base_spread_degrees: float = 5.0
+@export var min_spread_degrees: float = 2.0
 @export var max_spread_degrees: float = 15.0
-@export var score_min: float = -10.0
-@export var score_max: float = 20.0
+@export var score_neutral: float = 50.0
+@export var score_min: float = 0.0
+@export var score_max: float = 100.0
+@export var no_snipe_penalty_per_sec: float = 0.2
 var fire_timer: float = fire_interval
 var current_target: Node2D = null
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -13,7 +16,6 @@ var current_target: Node2D = null
 func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	animated_sprite.play("idle")
-	no_snipe_area.body_entered.connect(_on_no_snipe_area_body_entered)
 
 func _physics_process(delta: float) -> void:
 	fire_timer -= delta
@@ -23,13 +25,31 @@ func _physics_process(delta: float) -> void:
 			shoot(current_target)
 		fire_timer = fire_interval
 
-func get_score_ratio() -> float:
-	var clamped_score = clamp(global.teamwork_score, score_min, score_max)
-	return (clamped_score - score_min) / (score_max - score_min)
+	apply_no_snipe_penalty(delta)
+
+	if global.teamwork_score <= 0:
+		queue_free()
+
+func apply_no_snipe_penalty(delta: float) -> void:
+	var bodies = no_snipe_area.get_overlapping_bodies()
+	var zombie_count = 0
+	for body in bodies:
+		if body.is_in_group("zombie"):
+			zombie_count += 1
+	if zombie_count > 0:
+		global.teamwork_score -= no_snipe_penalty_per_sec * zombie_count * delta
 
 func get_current_spread_degrees() -> float:
-	var ratio = get_score_ratio()
-	return lerp(max_spread_degrees, base_spread_degrees, ratio)
+	var spread: float
+	if global.teamwork_score >= score_neutral:
+		var ratio = (global.teamwork_score - score_neutral) / (score_max - score_neutral)
+		ratio = clamp(ratio, 0.0, 1.0)
+		spread = lerp(base_spread_degrees, min_spread_degrees, ratio)
+	else:
+		var ratio = (score_neutral - global.teamwork_score) / (score_neutral - score_min)
+		ratio = clamp(ratio, 0.0, 1.0)
+		spread = lerp(base_spread_degrees, max_spread_degrees, ratio)
+	return spread
 
 func get_nearest_zombie() -> Node2D:
 	var zombies = get_tree().get_nodes_in_group("zombie")
@@ -59,7 +79,3 @@ func shoot(target: Node2D) -> void:
 func _on_animation_finished() -> void:
 	if animated_sprite.animation == "shoot":
 		animated_sprite.play("idle")
-
-func _on_no_snipe_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("zombie"):
-		global.teamwork_score -= 3

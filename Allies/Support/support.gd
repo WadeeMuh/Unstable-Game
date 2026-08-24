@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var heal_zone_scene: PackedScene = preload("res://Allies/Support/healing_zone.tscn")
 @export var spawn_interval: float = 10.0
-var spawn_timer: float = 0.0
+var spawn_timer: float = spawn_interval
 @export var spawn_min: Vector2 = Vector2(-128, -64)
 @export var spawn_max: Vector2 = Vector2(128, 64)
 
@@ -23,6 +23,9 @@ func _physics_process(delta: float) -> void:
 		if current_target != null:
 			shoot(current_target)
 		fire_timer = fire_interval
+		
+	if global.teamwork_score <= 0:
+		queue_free()
 
 func spawn_heal_zone() -> void:
 	var heal_zone = heal_zone_scene.instantiate()

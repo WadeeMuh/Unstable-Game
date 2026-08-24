@@ -30,6 +30,7 @@ window/stretch/aspect="expand"
 
 player=""
 zombie=""
+sniper_tower=""
 
 [input]
 

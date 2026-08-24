@@ -4,6 +4,7 @@ signal died(zombie: Node2D)
 
 const speed: int = 50
 var player: Node2D = null
+var actual_player: Node2D = null
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -17,14 +18,27 @@ var death_anim_played = false
 var zombie_num: int
 var health: int = 5
 
+@export var sniper_tower_target_chance: float = 0.2
+
 func take_damage(amount: int) -> void:
 	health -= amount
 
 func _ready() -> void:
+	add_to_group("zombie")
 	zombie_num = randi_range(1, 8)
+
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
-		player = players[0]
+		actual_player = players[0]
+
+	if global.teamwork_score > 0 and randf() < sniper_tower_target_chance:
+		var towers = get_tree().get_nodes_in_group("sniper_tower")
+		if towers.size() > 0:
+			player = towers[0]
+
+	if player == null:
+		player = actual_player
+
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 
 func _physics_process(_delta: float) -> void:
@@ -32,6 +46,13 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
+
+	if global.teamwork_score <= 0 and player != actual_player and actual_player != null:
+		player = actual_player
+		attacking = false
+		for i in range(attack_dirs.size()):
+			attack_dirs[i] = false
+
 	if !death_anim_played:
 		var dir_index = get_dir_index(player.global_position - global_position)
 		if attacking:
@@ -57,6 +78,7 @@ func _physics_process(_delta: float) -> void:
 			animated_sprite.play(str(dir_index) + "_death" + "_Z" + str(zombie_num))
 			$CollisionShape2D.queue_free()
 			death_anim_played = true
+			global.kills += 1
 			await animated_sprite.animation_finished
 			queue_free()
 	z_index = int(global_position.y)

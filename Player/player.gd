@@ -100,3 +100,7 @@ func get_last_dir_index() -> int:
 	if dir_index_map.has(y_key) and dir_index_map[y_key].has(x_key):
 		return dir_index_map[y_key][x_key]
 	return 0
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite.animation.ends_with("death"):
+		global.dead = true
